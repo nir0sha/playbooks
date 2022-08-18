@@ -1,0 +1,9 @@
+---    
+- name: postgresql demo
+  hosts: 192.168.29.224
+  become: true
+  become_user: postgres
+  tasks:
+    - name:
+      raw: pg_dump testdb | gzip > /var/lib/pgsql/backups/testdb.gz
+           #pg_dumpall | gzip > /var/lib/pgsql/backups/cluster_backup.gz                           

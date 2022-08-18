@@ -1,0 +1,7 @@
+---
+- hosts: windows_server
+  tasks:
+  - name: install mysql
+    win_chocolatey:
+      name: mysql
+      state: present
